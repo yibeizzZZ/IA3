@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Part 8 — My Events</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+    <style>body{font:16px/1.55 -apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;max-width:760px;margin:40px auto;padding:0 20px;color:#131517}
+  code{font:14px Menlo,Consolas,monospace;background:#f3f4f6;padding:1px 4px;border-radius:4px}
+  pre{background:#f3f4f6;padding:12px 14px;border-radius:8px;overflow-x:auto}pre code{padding:0;background:none}
+  details{border:1px solid #d6d9de;border-radius:8px;padding:8px 14px;margin:16px 0}summary{cursor:pointer}
+  table{border-collapse:collapse}td,th{border-bottom:1px solid #d6d9de;padding:6px 10px;text-align:left;vertical-align:top}
+  h1{font-size:28px}h2{font-size:21px;margin-top:32px}h3{font-size:17px}
+  </style>
+</head>
+<body>
+<h1 id="part-8-my-events">Part 8 — My Events</h1>
+<p>This folder is Part 7 finished. If you fell behind, drag in everything from this folder, the same way as in setup, and you are level with the class.</p>
+<h2 id="your-next-task-part-8-my-events">Your next task — Part 8: My Events</h2>
+<p>Build the My Events page from the same <code>events</code> state the Events page uses. Three groups, Going, Invited and Declined, each a list of cards. A group with nothing in it shows a short message instead of an empty space. Add Decline, so there is something to put in the third group: the RSVP form’s second button declines, and a declined event’s page offers a way back.</p>
+<p>Because both pages read the one <code>events</code> state in <code>App</code>, a status changed on either page is already right on the other. Nothing has to be kept in sync by hand.</p>
+<p><strong>Done when:</strong> <code>/my-events</code> shows the forum under Going and the other two upcoming events under Invited, with the Declined group showing its empty-state message. Pressing Decline on an event’s page moves it to Declined on My Events. Flipping a pill on Events moves the card between groups here.</p>
+<h3 id="additional-reading-think-before-coding">Additional reading: think before coding</h3>
+<ul>
+<li>The three groups are three different views of one list. Should each be its own <code>useState</code>, or worked out from <code>events</code> each time the page draws? Think about what happens when a status changes if the groups were separate state.</li>
+<li><code>events.filter(...)</code> gives a smaller list. What does <code>EventList</code> need to draw one group, and does it have to change at all?</li>
+<li>An empty group is a real state of the page, not an error. What does a person need to read there to understand the page is working?</li>
+<li>Declined is a third status. Where in the code is “Going or not Going” assumed, and what breaks when a third value arrives?</li>
+</ul>
+<p><strong>Read more:</strong> <a href="https://react.dev/learn/conditional-rendering">Conditional Rendering</a>, in the official React guide.</p>
+<h3 id="how-to-approach-it">How to approach it</h3>
+<ol type="1">
+<li><strong>The groups.</strong> In <code>MyEvents.jsx</code>, take <code>events</code> and <code>onStatusChange</code> as props. Build an array of three objects, each with a <code>status</code> and the matching <code>events.filter(...)</code>. This is not state; it is computed from <code>events</code> every time.</li>
+<li><strong>Draw them.</strong> <code>groups.map(...)</code> returns a <code>&lt;section&gt;</code> per group with an <code>&lt;h2&gt;</code> and, inside, either an empty-state <code>&lt;p&gt;</code> when <code>group.events.length === 0</code>, or an <code>&lt;EventList&gt;</code> for the group. Use <code>group.status</code> as the <code>key</code> and as the <code>view</code> prop so each list’s <code>id</code> is different.</li>
+<li><strong>Pass the handler.</strong> In <code>App.jsx</code>, give the My Events route <code>onStatusChange={handleStatusChange}</code> so the pills on this page work too.</li>
+<li><strong>Decline.</strong> In <code>EventDetails.jsx</code>, write <code>handleDecline()</code> that calls <code>onStatusChange(event.id, "Declined")</code>. Give <code>RsvpForm</code> an optional <code>cancelLabel</code> prop (default <code>"Cancel"</code>) and pass <code>cancelLabel="Decline"</code> with <code>onCancel={handleDecline}</code>.</li>
+<li><strong>Three statuses on the page.</strong> Replace the Going-or-form conditional with three: Going shows the sentence, Declined shows “You declined this invitation. Changed your mind?” with a Change your response button that sets the status back to Invited, Invited shows the form.</li>
+<li><strong>Three statuses on the pill.</strong> In <code>EventCard.jsx</code>, extend <code>statusClass</code> so Declined gets <code>invitation-status is-declined</code> (the class already exists in <code>styles.css</code>). The click handler can stay as it is: anything that is not Going becomes Going.</li>
+<li><strong>Styles.</strong> Paste the <code>/* Part 8 additions */</code> block from the Exact code box below onto the end of your <code>styles.css</code>.</li>
+<li>Save. Open My Events, decline something from its page, come back.</li>
+</ol>
+<details>
+<p><summary><strong>Exact code</strong> — open this only if you are still stuck after trying</summary></p>
+<p><code>src/pages/MyEvents.jsx</code>, the whole file:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode jsx"><code class="sourceCode javascriptreact"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="im">import</span> EventList <span class="im">from</span> <span class="st">&quot;../components/EventList.jsx&quot;</span><span class="op">;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="im">export</span> <span class="im">default</span> <span class="kw">function</span> <span class="fu">MyEvents</span>(props) {</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>  <span class="kw">const</span> { events<span class="op">,</span> onStatusChange } <span class="op">=</span> props<span class="op">;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>  <span class="kw">const</span> groups <span class="op">=</span> [</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>    { <span class="dt">status</span><span class="op">:</span> <span class="st">&quot;Going&quot;</span><span class="op">,</span> <span class="dt">events</span><span class="op">:</span> events<span class="op">.</span><span class="fu">filter</span>((<span class="bu">event</span>) <span class="kw">=&gt;</span> <span class="bu">event</span><span class="op">.</span><span class="at">status</span> <span class="op">===</span> <span class="st">&quot;Going&quot;</span>) }<span class="op">,</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>    { <span class="dt">status</span><span class="op">:</span> <span class="st">&quot;Invited&quot;</span><span class="op">,</span> <span class="dt">events</span><span class="op">:</span> events<span class="op">.</span><span class="fu">filter</span>((<span class="bu">event</span>) <span class="kw">=&gt;</span> <span class="bu">event</span><span class="op">.</span><span class="at">status</span> <span class="op">===</span> <span class="st">&quot;Invited&quot;</span>) }<span class="op">,</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a>    { <span class="dt">status</span><span class="op">:</span> <span class="st">&quot;Declined&quot;</span><span class="op">,</span> <span class="dt">events</span><span class="op">:</span> events<span class="op">.</span><span class="fu">filter</span>((<span class="bu">event</span>) <span class="kw">=&gt;</span> <span class="bu">event</span><span class="op">.</span><span class="at">status</span> <span class="op">===</span> <span class="st">&quot;Declined&quot;</span>) }<span class="op">,</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a>  ]<span class="op">;</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a>  <span class="cf">return</span> (</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a>    <span class="kw">&lt;main</span> <span class="ot">id</span><span class="op">=</span><span class="st">&quot;events-main&quot;</span> <span class="ot">className</span><span class="op">=</span><span class="st">&quot;events-main&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a>      <span class="kw">&lt;div</span> <span class="ot">className</span><span class="op">=</span><span class="st">&quot;events-title-row&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true"></a>        <span class="kw">&lt;h1&gt;</span>My Events<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true"></a>      <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true"></a>      <span class="va">{</span>groups<span class="op">.</span><span class="fu">map</span>((group) <span class="kw">=&gt;</span> (</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true"></a>        <span class="kw">&lt;section</span> <span class="ot">className</span><span class="op">=</span><span class="st">&quot;my-events-group&quot;</span> <span class="ot">key</span><span class="op">=</span><span class="va">{</span>group<span class="op">.</span><span class="at">status</span><span class="va">}</span> <span class="ot">aria-labelledby</span><span class="op">=</span><span class="va">{</span><span class="st">&quot;group-&quot;</span> <span class="op">+</span> group<span class="op">.</span><span class="at">status</span><span class="op">.</span><span class="fu">toLowerCase</span>()<span class="va">}</span><span class="kw">&gt;</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true"></a>          <span class="kw">&lt;h2</span> <span class="ot">id</span><span class="op">=</span><span class="va">{</span><span class="st">&quot;group-&quot;</span> <span class="op">+</span> group<span class="op">.</span><span class="at">status</span><span class="op">.</span><span class="fu">toLowerCase</span>()<span class="va">}</span><span class="kw">&gt;</span><span class="va">{</span>group<span class="op">.</span><span class="at">status</span><span class="va">}</span><span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true"></a>          <span class="va">{</span>group<span class="op">.</span><span class="at">events</span><span class="op">.</span><span class="at">length</span> <span class="op">===</span> <span class="dv">0</span> <span class="op">?</span> (</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true"></a>            <span class="kw">&lt;p</span> <span class="ot">className</span><span class="op">=</span><span class="st">&quot;empty-state&quot;</span><span class="kw">&gt;</span>Nothing here yet. Events you mark as <span class="va">{</span>group<span class="op">.</span><span class="at">status</span><span class="op">.</span><span class="fu">toLowerCase</span>()<span class="va">}</span> will show up here.<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true"></a>          ) <span class="op">:</span> (</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true"></a>            <span class="fu">&lt;EventList</span> <span class="ot">events</span><span class="op">=</span><span class="va">{</span>group<span class="op">.</span><span class="at">events</span><span class="va">}</span> <span class="ot">view</span><span class="op">=</span><span class="va">{</span>group<span class="op">.</span><span class="at">status</span><span class="op">.</span><span class="fu">toLowerCase</span>()<span class="va">}</span> <span class="ot">onStatusChange</span><span class="op">=</span><span class="va">{</span>onStatusChange<span class="va">}</span> <span class="fu">/&gt;</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true"></a>          )<span class="va">}</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true"></a>        <span class="kw">&lt;/section&gt;</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true"></a>      ))<span class="va">}</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true"></a>    <span class="kw">&lt;/main&gt;</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true"></a>  )<span class="op">;</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true"></a>}</span></code></pre></div>
+<p><strong>What this code does.</strong> <code>groups</code> is built from <code>events</code> on every render, so it can never be out of date. The outer <code>map()</code> draws one section per group; the inner <code>EventList</code> is the same component the Events page uses, given a shorter list. <code>condition ? a : b</code> picks the empty-state paragraph or the list. <code>aria-labelledby</code> ties each section to its heading so a screen reader announces “Going, region”.</p>
+<p><code>src/App.jsx</code>, the one route that changes:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode jsx"><code class="sourceCode javascriptreact"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a>        <span class="fu">&lt;Route</span> <span class="ot">path</span><span class="op">=</span><span class="st">&quot;/my-events&quot;</span> <span class="ot">element</span><span class="op">=</span><span class="va">{</span><span class="fu">&lt;MyEvents</span> <span class="ot">events</span><span class="op">=</span><span class="va">{</span>events<span class="va">}</span> <span class="ot">onStatusChange</span><span class="op">=</span><span class="va">{</span>handleStatusChange<span class="va">}</span> <span class="fu">/&gt;</span><span class="va">}</span> <span class="fu">/&gt;</span></span></code></pre></div>
+<p><code>src/pages/EventDetails.jsx</code>, the lines that change:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode jsx"><code class="sourceCode javascriptreact"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a>  <span class="kw">function</span> <span class="fu">handleDecline</span>() {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>    <span class="fu">onStatusChange</span>(<span class="bu">event</span><span class="op">.</span><span class="at">id</span><span class="op">,</span> <span class="st">&quot;Declined&quot;</span>)<span class="op">;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>  }</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>  <span class="kw">const</span> statusClass <span class="op">=</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>    <span class="bu">event</span><span class="op">.</span><span class="at">status</span> <span class="op">===</span> <span class="st">&quot;Going&quot;</span> <span class="op">?</span> <span class="st">&quot;invitation-status is-going&quot;</span> <span class="op">:</span> <span class="bu">event</span><span class="op">.</span><span class="at">status</span> <span class="op">===</span> <span class="st">&quot;Declined&quot;</span> <span class="op">?</span> <span class="st">&quot;invitation-status is-declined&quot;</span> <span class="op">:</span> <span class="st">&quot;invitation-status&quot;</span><span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode jsx"><code class="sourceCode javascriptreact"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a>        {<span class="bu">event</span><span class="op">.</span><span class="at">status</span> <span class="op">===</span> <span class="st">&quot;Going&quot;</span> <span class="op">&amp;&amp; </span><span class="kw">&lt;p</span> <span class="ot">className</span><span class="op">=</span><span class="st">&quot;rsvp-card&quot;</span><span class="kw">&gt;</span>You are going. See you there.<span class="kw">&lt;/p&gt;</span>}</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>        {<span class="bu">event</span><span class="op">.</span><span class="at">status</span> <span class="op">===</span> <span class="st">&quot;Declined&quot;</span> <span class="op">&amp;&amp;</span> (</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>          <span class="kw">&lt;p</span> <span class="ot">className</span><span class="op">=</span><span class="st">&quot;rsvp-card&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a>            You declined this invitation. Changed your mind?<span class="va">{</span><span class="st">&quot; &quot;</span><span class="va">}</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a>            <span class="kw">&lt;button</span> <span class="ot">type</span><span class="op">=</span><span class="st">&quot;button&quot;</span> <span class="ot">className</span><span class="op">=</span><span class="st">&quot;secondary-button&quot;</span> <span class="ot">onClick</span><span class="op">=</span><span class="va">{</span>() <span class="kw">=&gt;</span> <span class="fu">onStatusChange</span>(<span class="bu">event</span><span class="op">.</span><span class="at">id</span><span class="op">,</span> <span class="st">&quot;Invited&quot;</span>)<span class="va">}</span><span class="kw">&gt;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a>              Change your response</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a>            <span class="kw">&lt;/button&gt;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a>          <span class="kw">&lt;/p&gt;</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true"></a>        )}</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true"></a>        {<span class="bu">event</span><span class="op">.</span><span class="at">status</span> <span class="op">===</span> <span class="st">&quot;Invited&quot;</span> <span class="op">&amp;&amp;</span> (</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true"></a>          <span class="fu">&lt;RsvpForm</span> <span class="ot">event</span><span class="op">=</span><span class="va">{</span><span class="bu">event</span><span class="va">}</span> <span class="ot">onSubmit</span><span class="op">=</span><span class="va">{</span>handleRsvpSubmit<span class="va">}</span> <span class="ot">onCancel</span><span class="op">=</span><span class="va">{</span>handleDecline<span class="va">}</span> <span class="ot">cancelLabel</span><span class="op">=</span><span class="st">&quot;Decline&quot;</span> <span class="fu">/&gt;</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true"></a>        )}</span></code></pre></div>
+<p><strong>What this code does.</strong> <code>condition &amp;&amp; (…)</code> draws the JSX only when the condition is true, so exactly one of the three blocks appears. <code>{" "}</code> is a space; JSX drops the whitespace between a sentence and a tag on a new line, so it is put back on purpose.</p>
+<p><code>src/components/RsvpForm.jsx</code>, the two lines that change:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode jsx"><code class="sourceCode javascriptreact"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a>  <span class="kw">const</span> { <span class="bu">event</span><span class="op">,</span> onSubmit<span class="op">,</span> onCancel<span class="op">,</span> cancelLabel <span class="op">=</span> <span class="st">&quot;Cancel&quot;</span> } <span class="op">=</span> props<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode jsx"><code class="sourceCode javascriptreact"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a>        <span class="kw">&lt;button</span> <span class="ot">type</span><span class="op">=</span><span class="st">&quot;button&quot;</span> <span class="ot">className</span><span class="op">=</span><span class="st">&quot;secondary-button&quot;</span> <span class="ot">onClick</span><span class="op">=</span><span class="va">{</span>onCancel<span class="va">}</span><span class="kw">&gt;</span><span class="va">{</span>cancelLabel<span class="va">}</span><span class="kw">&lt;/button&gt;</span></span></code></pre></div>
+<p><strong>What this code does.</strong> <code>cancelLabel = "Cancel"</code> in the destructuring is a default: the prop is used when it is passed and “Cancel” when it is not.</p>
+<p><code>src/components/EventCard.jsx</code>, the lines that change:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode jsx"><code class="sourceCode javascriptreact"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a>  <span class="kw">const</span> statusClass <span class="op">=</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a>    status <span class="op">===</span> <span class="st">&quot;Going&quot;</span> <span class="op">?</span> <span class="st">&quot;invitation-status is-going&quot;</span> <span class="op">:</span> status <span class="op">===</span> <span class="st">&quot;Declined&quot;</span> <span class="op">?</span> <span class="st">&quot;invitation-status is-declined&quot;</span> <span class="op">:</span> <span class="st">&quot;invitation-status&quot;</span><span class="op">;</span></span></code></pre></div>
+<p><code>src/styles.css</code>, added at the end (group spacing and the dashed empty state):</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="co">/* Part 8 additions: My Events groups and the empty state. */</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a><span class="fu">.my-events-group</span> { <span class="kw">margin-top</span>: <span class="dv">28</span><span class="dt">px</span><span class="op">;</span> }</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a><span class="fu">.my-events-group</span> h2 { <span class="kw">margin</span>: <span class="dv">0</span> <span class="dv">0</span> <span class="dv">12</span><span class="dt">px</span><span class="op">;</span> <span class="kw">font-size</span>: <span class="dv">18</span><span class="dt">px</span><span class="op">;</span> <span class="kw">font-weight</span>: <span class="dv">600</span><span class="op">;</span> }</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a><span class="fu">.empty-state</span> { <span class="kw">margin</span>: <span class="dv">0</span><span class="op">;</span> <span class="kw">padding</span>: <span class="dv">16</span><span class="dt">px</span> <span class="dv">18</span><span class="dt">px</span><span class="op">;</span> <span class="kw">border</span>: <span class="dv">1</span><span class="dt">px</span> <span class="dv">dashed</span> <span class="fu">var(</span><span class="va">--line</span><span class="fu">)</span><span class="op">;</span> <span class="kw">border-radius</span>: <span class="dv">12</span><span class="dt">px</span><span class="op">;</span> <span class="kw">color</span>: <span class="fu">var(</span><span class="va">--secondary</span><span class="fu">)</span><span class="op">;</span> }</span></code></pre></div>
+</details>
+<h2 id="success-check">Success check</h2>
+<p>My Events shows three headed groups. One is empty and says so. Decline an event from its page and it moves groups; press “Change your response” and it moves back. Change a pill on Events and My Events agrees without a refresh. Explain why the groups are not state. Take a screenshot now for your PDF: the whole StackBlitz window, with <code>MyEvents.jsx</code> open and My Events in the preview.</p>
+</body>
+</html>
